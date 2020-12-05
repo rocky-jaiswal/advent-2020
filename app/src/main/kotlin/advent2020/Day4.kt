@@ -40,10 +40,12 @@ fun part2(people: List<RawPerson>): List<List<Map<String, String>>> {
         rpd.map { it.split(":") }.map{ mapOf(Pair(it[0], it[1])) }
     }
 
-    return peopleWithTraits.filter { pwt ->
+    return peopleWithTraits.filter f@{ pwt ->
         val personMap = pwt.reduce { acc, entry ->
             acc.plus(entry.keys.first() to entry.values.first())
         }
+
+        if (personMap.values.any { it == null || it == "" }) return@f false
 
         val hgt = personMap["hgt"]
         val okHeight = hgt != null && (hgt.endsWith("cm") || hgt.endsWith("in"))
@@ -62,6 +64,6 @@ fun part2(people: List<RawPerson>): List<List<Map<String, String>>> {
                 (2020..2030).contains(Integer.parseInt(personMap["eyr"])) &&
                 listOf("amb", "blu", "brn", "gry", "grn", "hzl", "oth").contains(personMap["ecl"]) &&
                 personMap["pid"]!!.length == 9 &&
-                personMap["hcl"]!!.matches(Regex("#[a-f0-9]{6}"))
+                personMap["hcl"]!!.matches(Regex("\\#[a-f0-9]{6}"))
     }
 }
