@@ -26,7 +26,7 @@ fun main() {
     println(realPass.size)
 }
 
-fun part1(people: List<RawPerson>): List<RawPerson> {
+private fun part1(people: List<RawPerson>): List<RawPerson> {
     return people.filter { rawPerson ->
         val rpd = rawPerson.desc.split(Regex("\\s"))
         val traits = rpd.map { it.split(":").first() }
@@ -34,7 +34,7 @@ fun part1(people: List<RawPerson>): List<RawPerson> {
     }
 }
 
-fun part2(people: List<RawPerson>): List<List<Map<String, String>>> {
+private fun part2(people: List<RawPerson>): List<List<Map<String, String>>> {
     val peopleWithTraits = people.map { rawPerson ->
         val rpd = rawPerson.desc.split(Regex("\\s"))
         rpd.map { it.split(":") }.map{ mapOf(Pair(it[0], it[1])) }

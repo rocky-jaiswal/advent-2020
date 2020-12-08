@@ -24,7 +24,7 @@ fun back(rg: IntRange): IntRange {
     return ceil((top + bottom) / 2.0).toInt()..bottom
 }
 
-fun part1(inputs: List<String>): List<Int> {
+private fun part1(inputs: List<String>): List<Int> {
     return inputs.map { input ->
         val dirs = input.split("").filter { it.strip() != "" }
         var range1 = 0..127
@@ -43,6 +43,6 @@ fun part1(inputs: List<String>): List<Int> {
     }
 }
 
-fun part2(seats: List<Int>): List<Int> {
+private fun part2(seats: List<Int>): List<Int> {
     return (seats.min()!!..seats.max()!!).filter { !seats.contains(it) }
 }

@@ -13,7 +13,7 @@ fun main() {
     println(part2(nums, targetSum))
 }
 
-fun part1(nums: List<Double>, targetSum: Double): List<Double?> {
+private fun part1(nums: List<Double>, targetSum: Double): List<Double?> {
     val soln = nums.find { n ->
         nums.find { it + n == targetSum } != null
     }
@@ -21,7 +21,7 @@ fun part1(nums: List<Double>, targetSum: Double): List<Double?> {
     return listOf(soln, targetSum - (soln ?: 0.toDouble()))
 }
 
-fun part2(nums: List<Double>, targetSum: Double): List<Any?> {
+private fun part2(nums: List<Double>, targetSum: Double): List<Any?> {
     var x: List<Double?> = emptyList()
     val soln = nums.find { n ->
         x = part1(nums, targetSum - n)

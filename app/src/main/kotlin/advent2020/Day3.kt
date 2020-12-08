@@ -10,7 +10,7 @@ fun main() {
     println(plot(inputs, 1, 2))
 }
 
-fun plot(inputs: List<String>, right: Int, down: Int): Int {
+private fun plot(inputs: List<String>, right: Int, down: Int): Int {
     val height = inputs.size
     val width = height * (right + 1)
 

@@ -29,7 +29,7 @@ fun main() {
     part2(coll)
 }
 
-fun findContainer(coll: Map<String, List<Pair<String, String>>>, str: String, containers: MutableList<String>): List<String> {
+private fun findContainer(coll: Map<String, List<Pair<String, String>>>, str: String, containers: MutableList<String>): List<String> {
     val canContain = coll.keys.filter { key ->
         coll[key]!!.any { foo -> foo.second == str }
     }
@@ -44,7 +44,7 @@ fun findContainer(coll: Map<String, List<Pair<String, String>>>, str: String, co
     return containers
 }
 
-fun findContents(coll: Map<String, List<Pair<String, String>>>, l: Int, str: String, containers: MutableList<Int>): List<Int> {
+private fun findContents(coll: Map<String, List<Pair<String, String>>>, l: Int, str: String, containers: MutableList<Int>): List<Int> {
     val contents = coll[str]
 //    println(contents)
 
@@ -58,13 +58,13 @@ fun findContents(coll: Map<String, List<Pair<String, String>>>, l: Int, str: Str
     return containers
 }
 
-fun part1(coll: Map<String, List<Pair<String, String>>>) {
+private fun part1(coll: Map<String, List<Pair<String, String>>>) {
     val containers = mutableListOf<String>()
     println(findContainer(coll, "shiny gold", containers).distinct().size)
 }
 
-fun part2(coll: Map<String, List<Pair<String, String>>>) {
+private fun part2(coll: Map<String, List<Pair<String, String>>>) {
     val contents = mutableListOf<Int>(1)
+    // TODO: Fix me
     println(findContents(coll, 1, "shiny gold", contents))
-//    println(findContents(coll, 1, "shiny gold", contents).sum() - 1)
 }

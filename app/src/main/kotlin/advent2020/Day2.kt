@@ -14,7 +14,7 @@ fun main() {
     println(valid2.size)
 }
 
-fun part1(parts: List<List<String>>): List<List<String>> {
+private fun part1(parts: List<List<String>>): List<List<String>> {
     return parts.filter { line ->
         val cond = line[0].strip().split(Regex("\\s"))
         val pass = line[1].strip()
@@ -27,7 +27,7 @@ fun part1(parts: List<List<String>>): List<List<String>> {
     }
 }
 
-fun part2(parts: List<List<String>>): List<List<String>> {
+private fun part2(parts: List<List<String>>): List<List<String>> {
     return parts.filter { line ->
         val cond = line[0].strip().split(Regex("\\s"))
         val pass = line[1].strip()

@@ -19,14 +19,15 @@ fun main() {
     println(part2(answers))
 }
 
-fun part1(answers: MutableList<String>): Int {
+private fun part1(answers: MutableList<String>): Int {
     val groups = answers.map{ it.split("|") }.map{ group -> group.filter { it != "" } }
     return groups
             .map{ it.joinToString("").split("").distinct().joinToString("") }
             .map { it.length }
             .sum()
 }
-fun part2(answers: MutableList<String>): Int {
+
+private fun part2(answers: MutableList<String>): Int {
     val groups = answers.map{ it.split("|") }.map{ group -> group.filter { it != "" } }
     val all = groups.map m@{ group ->
         if (group.size == 1) {
