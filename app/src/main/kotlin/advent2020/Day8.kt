@@ -3,7 +3,7 @@ package advent2020
 fun main() {
     val inputs = fileToArr("app/src/main/resources/day8_1.txt")
 
-    var acc1 = part1(inputs)
+    val acc1 = part1(inputs)
     println(acc1)
 }
 
