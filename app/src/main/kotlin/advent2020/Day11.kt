@@ -1,6 +1,6 @@
 package advent2020
 
-data class Position(val location: Pair<Int, Int>, var history: List<String>)
+private data class Position(val location: Pair<Int, Int>, var history: List<String>)
 
 fun main() {
     val inputs = fileToArr("app/src/main/resources/day11_1.txt")
