@@ -4,7 +4,7 @@ fun main() {
     val inputs2 = "16,12,1,0,15,7,11"
     val inputs = inputs2.split(",").filter { it != "" }.map { Integer.parseInt(it) }
 
-    val init = List<Int?>(2013){ null }
+    val init = List<Int?>(2020 - inputs.size){ null }
     val list = inputs.plus(init).withIndex()
     val fin = mutableListOf<Int>()
 
@@ -30,5 +30,5 @@ fun main() {
         }
     }
 
-    println(fin[2019])
+    println(fin.last())
 }
